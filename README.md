@@ -16,5 +16,9 @@ Python, Machine Learning, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Reac
 
 **Objective:** To bridge the gap between environmental intelligence and preventive healthcare by transforming environmental data into meaningful, actionable health recommendations.
 
+<img width="2677" height="3503" alt="block2_forecast_health_advisory" src="https://github.com/user-attachments/assets/d15c39e7-6244-4f09-9d79-aa1fb70395e1" />
+
+
+
 
 
