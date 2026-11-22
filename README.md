@@ -15,3 +15,6 @@ It provides real-time environmental insights, health advisories, and actionable 
 Python, Machine Learning, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, React.js, Flask, MySQL, REST APIs.
 
 **Objective:** To bridge the gap between environmental intelligence and preventive healthcare by transforming environmental data into meaningful, actionable health recommendations.
+
+![Uploading block1_aqi_model_report.png…]()
+
