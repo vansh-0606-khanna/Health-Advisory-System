@@ -18,6 +18,14 @@ Python, Machine Learning, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Reac
 
 <img width="2677" height="3503" alt="block2_forecast_health_advisory" src="https://github.com/user-attachments/assets/d15c39e7-6244-4f09-9d79-aa1fb70395e1" />
 
+<img width="2824" height="3242" alt="block1_aqi_model_report" src="https://github.com/user-attachments/assets/48a17561-79ae-436a-92f2-33c1dd74c15b" />
+
+<img width="1348" height="698" alt="Screenshot 2026-11-20 004526" src="https://github.com/user-attachments/assets/b1b96e64-4f48-4871-916b-4279de344a39" />
+
+<img width="1772" height="830" alt="Screenshot 2026-11-22 233732" src="https://github.com/user-attachments/assets/8673a2b0-479d-44aa-8f15-7f23d689c746" />
+<img width="1541" height="727" alt="Screenshot 2026-11-20 004454" src="https://github.com/user-attachments/assets/4de002d8-8019-40ac-ab6a-0cfe6d7b7a51" />
+<img width="1251" height="671" alt="Screenshot 2026-11-19 195326" src="https://github.com/user-attachments/assets/954afea7-ad83-497e-8aaf-ddc1d684c046" />
+
 
 
 
