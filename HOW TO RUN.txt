@@ -1,0 +1,339 @@
+==============================================================
+VAYUDRISHTI – COMPLETE EXECUTION PIPELINE
+XGBoost + LSTM Ensemble System
+==============================================================
+
+
+==========================
+1. SYSTEM REQUIREMENTS
+==========================
+
+OS:
+- Windows 10/11 / Linux / MacOS
+
+Python:
+- Python 3.10 or 3.11
+
+Node:
+- Node.js 18+
+
+RAM:
+- Minimum 8GB
+
+GPU:
+- Optional (for LSTM training only)
+
+
+==========================
+2. PROJECT STRUCTURE
+==========================
+
+vayudrishti/
+│
+├── backend/
+│   ├── main.py
+│   ├── data_ingestion.py
+│   ├── preprocessing.py
+│   ├── model_engine.py
+│   ├── advisory_engine.py
+│   ├── explainability.py
+│   ├── requirements.txt
+│   └── models/
+│        ├── xgboost.pkl
+│        ├── lstm.h5
+│        ├── scaler.pkl
+│        ├── pca.pkl
+│        └── selector.pkl
+│
+└── frontend/
+    ├── index.html
+    ├── style.css
+    ├── script.js
+
+
+==========================
+3. BACKEND SETUP
+==========================
+
+Step 1: Create virtual environment
+
+cd backend
+python -m venv venv
+
+Windows:
+venv\Scripts\activate
+
+Linux/Mac:
+source venv/bin/activate
+
+
+Step 2: Install dependencies
+
+pip install fastapi uvicorn pandas numpy scikit-learn xgboost lightgbm catboost tensorflow shap joblib requests python-multipart
+
+
+Step 3: Environment variables
+
+Create .env file inside backend:
+
+DATA_GOV_API_KEY=YOUR_KEY
+WEATHER_API_KEY=YOUR_KEY
+
+
+==========================
+4. TRAIN MODELS (ONLY FIRST TIME)
+==========================
+
+If models do not exist:
+
+python model_engine.py
+
+This will:
+- Load historical AQI dataset
+- Perform preprocessing
+- Train XGBoost
+- Train LSTM
+- Compute ensemble weights
+- Save models inside /models/
+
+
+==========================
+5. RUN BACKEND SERVER
+==========================
+
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+Server will run at:
+
+http://localhost:8000
+
+
+Test endpoint:
+
+Open browser:
+http://localhost:8000/docs
+
+Use Swagger UI to test /predict
+
+
+==========================
+6. BACKEND PIPELINE FLOW
+==========================
+
+Client Request
+      ↓
+FastAPI /predict endpoint
+      ↓
+data_ingestion.py
+      ↓
+preprocessing.py
+      ↓
+model_engine.py
+      ↓
+explainability.py
+      ↓
+advisory_engine.py
+      ↓
+JSON Response
+
+
+==========================
+7. FRONTEND SETUP
+==========================
+
+cd frontend
+
+If static frontend:
+Just open index.html
+
+If using Node:
+
+npm install
+npm run dev
+
+If using simple server:
+
+npx serve .
+
+
+==========================
+8. CONNECT FRONTEND TO BACKEND
+==========================
+
+Inside script.js:
+
+Change API URL:
+
+const API_URL = "http://localhost:8000/predict";
+
+Ensure CORS enabled in FastAPI:
+
+In main.py:
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+==========================
+9. REQUEST FORMAT (FROM FRONTEND)
+==========================
+
+POST /predict
+
+Body:
+
+{
+    "city": "Delhi"
+}
+
+
+==========================
+10. RESPONSE FORMAT
+==========================
+
+{
+  "city": "Delhi",
+  "aqi": 218,
+  "risk_score": 87,
+  "risk_category": "Very Unhealthy",
+  "confidence": 0.88,
+  "ensemble_weights": {
+      "xgb": 0.65,
+      "lstm": 0.35
+  },
+  "shap_values": {
+      "PM2.5": 34,
+      "AQI": 28,
+      "NO2": 14
+  },
+  "advisory": {
+      "mask": true,
+      "limit_outdoor": true,
+      "school_warning": true
+  }
+}
+
+
+==========================
+11. LIVE INFERENCE EXECUTION
+==========================
+
+User clicks RUN ANALYSIS
+      ↓
+Frontend fetch() call
+      ↓
+FastAPI endpoint triggered
+      ↓
+Live AQI pulled from data.gov.in
+      ↓
+Feature engineering
+      ↓
+Lag features generated
+      ↓
+Scaling + PCA + Selection
+      ↓
+XGBoost prediction
+      ↓
+LSTM prediction
+      ↓
+Weighted ensemble
+      ↓
+SHAP explanation
+      ↓
+Risk classification
+      ↓
+Response returned
+      ↓
+Dashboard updated
+
+
+==========================
+12. DEPLOYMENT (PRODUCTION)
+==========================
+
+Backend Deployment:
+
+Option A: Render
+- Connect GitHub
+- Add Start Command:
+  uvicorn main:app --host 0.0.0.0 --port 10000
+
+Option B: AWS EC2
+- Install Python
+- Clone repo
+- Install dependencies
+- Use:
+  sudo systemctl create service for uvicorn
+
+Option C: Docker
+
+Create Dockerfile:
+
+FROM python:3.10
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+Build:
+
+docker build -t vayudrishti .
+
+Run:
+
+docker run -p 8000:8000 vayudrishti
+
+
+==========================
+13. COMMON ERRORS
+==========================
+
+CORS error:
+→ Enable CORSMiddleware
+
+Model not found:
+→ Run model_engine.py first
+
+Port already in use:
+→ Change port
+
+SHAP slow:
+→ Precompute expected values
+
+LSTM slow:
+→ Use CPU optimized TF build
+
+
+==========================
+14. PRODUCTION OPTIMIZATION
+==========================
+
+- Disable --reload
+- Use Gunicorn + Uvicorn workers
+- Cache API results
+- Use Redis for temporary storage
+- Store logs using logging module
+- Add rate limiting
+- Use Nginx reverse proxy
+
+
+==========================
+SYSTEM READY
+==========================
+
+Backend running
+Frontend connected
+Live inference enabled
+Ensemble active
+SHAP explanations active
+
+==============================================================
+END OF HOW TO RUN FILE
+==============================================================
