@@ -1,4 +1,4 @@
-# Vayu: AI-Powered Health Advisory System
+# AI-Powered Health Advisory System
 
 > Turning environmental data into personalized, actionable health recommendations.
 
