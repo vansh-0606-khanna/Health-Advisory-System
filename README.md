@@ -1,6 +1,6 @@
 <div align="center">
 
-# AI-Powered Health Advisory System
+# AI-Powered Health and Environment Advisory System
 
 **Turning environmental data into personalized, actionable health recommendations.**
 
