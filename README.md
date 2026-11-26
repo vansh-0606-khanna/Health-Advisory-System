@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌬️ Vayu: AI-Powered Health Advisory System
+# AI-Powered Health Advisory System
 
 **Turning environmental data into personalized, actionable health recommendations.**
 
@@ -308,7 +308,7 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
 
 ## ⚠️ Disclaimer
 
-Vayu provides general informational guidance based on environmental data and machine learning predictions. It is **not** a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical concerns.
+Project provides general informational guidance based on environmental data and machine learning predictions. It is **not** a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical concerns.
 
 <div align="center">
 
