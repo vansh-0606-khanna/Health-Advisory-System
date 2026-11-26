@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌬️ Vayu: AI-Powered Health Advisory System
+# 🌬️ AI-Powered Health Advisory System
 
 **Turning environmental data into personalized, actionable health recommendations.**
 
@@ -22,17 +22,16 @@
 </div>
 
 <p align="center">
-  <!-- Add your best dashboard screenshot here as the hero image -->
-  <img src="https://github.com/user-attachments/assets/b1b96e64-4f48-4871-916b-4279de344a39" width="90%" alt="Vayu dashboard preview" />
+  <img src="assets/banner.svg" width="100%" alt="AI-Powered Health Advisory System banner" />
 </p>
 
 ---
 
 ## 📌 Overview
 
-Air pollution and changing weather directly affect public health, yet raw AQI numbers and forecasts rarely tell people what to *do*. **Vayu** closes that gap.
+Air pollution and changing weather directly affect public health, yet raw AQI numbers and forecasts rarely tell people what to *do*. This project closes that gap.
 
-Vayu is an AI-powered health advisory system that combines **air quality monitoring**, **weather forecasting**, and **machine learning** to assess pollution-related health risks and generate clear, personalized preventive-care recommendations.
+The **AI-Powered Health Advisory System** combines **air quality monitoring**, **weather forecasting**, and **machine learning** to assess pollution-related health risks and generate clear, personalized preventive-care recommendations.
 
 ### The Problem
 - AQI values are hard for the general public to interpret.
@@ -40,7 +39,7 @@ Vayu is an AI-powered health advisory system that combines **air quality monitor
 - Vulnerable groups (children, elderly, people with respiratory conditions) need tailored guidance.
 
 ### The Solution
-Vayu ingests environmental data, predicts conditions using ML models, classifies health risk levels, and converts them into plain-language advisories through an interactive dashboard.
+The system ingests environmental data, predicts conditions using ML models, classifies health risk levels, and converts them into plain-language advisories through an interactive dashboard.
 
 > **Objective:** Bridge the gap between environmental intelligence and preventive healthcare by transforming environmental data into meaningful, actionable health recommendations.
 
@@ -73,9 +72,9 @@ flowchart LR
 
 ### How It Works
 
-1. **Data Collection:** Pollution and weather data are gathered and stored (see `PollutionDataProcessing (1).ipynb`).
+1. **Data Collection:** Pollution and weather data are gathered and stored (see `PollutionDataProcessing.ipynb`).
 2. **Preprocessing:** Missing values are handled, features are engineered, and data is prepared for modeling.
-3. **Model Training:** Scikit-learn models are trained to predict AQI and forecast weather conditions (see `MAIN_FILE_VAYU_BACKEND_clean.ipynb`).
+3. **Model Training:** Scikit-learn models are trained to predict AQI and forecast weather conditions (see `MAIN_FILE_BACKEND_clean.ipynb`).
 4. **Risk Classification:** Predicted AQI is mapped to a health risk category.
 5. **Advisory Generation:** Risk level and weather are combined into personalized recommendations.
 6. **Delivery:** The backend serves results via REST APIs to the dashboard.
@@ -145,9 +144,9 @@ flowchart LR
 ## 📁 Project Structure
 
 ```
-vayu/
-├── MAIN_FILE_VAYU_BACKEND_clean.ipynb   # Core ML pipeline: model training, prediction, advisory logic
-├── PollutionDataProcessing (1).ipynb    # Data cleaning, preprocessing, and exploration
+health-advisory-system/
+├── MAIN_FILE_BACKEND_clean.ipynb   # Core ML pipeline: model training, prediction, advisory logic
+├── PollutionDataProcessing.ipynb    # Data cleaning, preprocessing, and exploration
 ├── server.js                            # Node.js server exposing the REST API
 ├── index.html                           # Frontend dashboard
 ├── package.json                         # Node.js dependencies and scripts
@@ -210,8 +209,8 @@ Then open `.env` and add your own values:
 
 Run these in order using Jupyter:
 
-1. `PollutionDataProcessing (1).ipynb` for data preparation
-2. `MAIN_FILE_VAYU_BACKEND_clean.ipynb` for model training and backend logic
+1. `PollutionDataProcessing.ipynb` for data preparation
+2. `MAIN_FILE_BACKEND_clean.ipynb` for model training and backend logic
 
 **6. Start the server**
 
@@ -295,8 +294,7 @@ Contributions are welcome.
 
 | Name | GitHub |
 |---|---|
-| Vansh Khanna | [@vansh-0606-khanna](https://github.com/vansh-0606-khanna) |
-| `<Your Name>` | [@<your-username>](https://github.com/<your-username>) |
+| Yashi | [@<your-username>](https://github.com/<your-username>) |
 
 ---
 
@@ -308,7 +306,7 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
 
 ## ⚠️ Disclaimer
 
-Vayu provides general informational guidance based on environmental data and machine learning predictions. It is **not** a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical concerns.
+This system provides general informational guidance based on environmental data and machine learning predictions. It is **not** a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical concerns.
 
 <div align="center">
 
